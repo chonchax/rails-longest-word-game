@@ -1,0 +1,14 @@
+<%= console %>
+<h1>Resultat</h1>
+
+<% if @included %>
+  <% if @include %>
+    <p><strong>Congratulation!</strong><%=@word.capitalize%> is a valid english word</p>
+  <% else %>
+    <p>Sorry but <strong><%=@word.capitalize%> </strong>does not seem to be a valid English word ....</p>
+  <% end %>
+<% else %>
+  <p>Sorry but <strong><%= @word.capitalize %></strong> can't be built out of <%= @letters.join(", ") %></p>
+<% end %>
+
+<%= link_to "rejouer?", new_path %>
